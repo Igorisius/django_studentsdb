@@ -1,0 +1,22 @@
+INFO 2016-02-16 11:54:35,525 signals: Student added: Семен Горох (ID: 14)
+INFO 2016-02-16 11:55:11,048 signals: Student updated: Семен Горох (ID: 14)
+INFO 2016-02-16 12:04:07,170 signals: Student deleted: Іван Фострик (ID: 1)
+ERROR 2016-02-16 12:14:32,270 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/data/work/virtualenvs/studentsdb/src/studentsdb/students/views/contact_admin.py", line 64, in contact_admin
+    send_mail(subject, message, from_email, [''])
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/__init__.py", line 62, in send_mail
+    return mail.send()
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/message.py", line 286, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 92, in send_messages
+    new_conn_created = self.open()
+  File "/data/work/virtualenvs/studentsdb/local/lib/python2.7/site-packages/django/core/mail/backends/smtp.py", line 55, in open
+    self.connection.ehlo()
+  File "/usr/lib/python2.7/smtplib.py", line 413, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/usr/lib/python2.7/smtplib.py", line 341, in putcmd
+    self.send(str)
+  File "/usr/lib/python2.7/smtplib.py", line 333, in send
+    raise SMTPServerDisconnected('please run connect() first')
+SMTPServerDisconnected: please run connect() first

@@ -1,0 +1,51 @@
+/* Global Styles */
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}
+#bodys {
+margin-left: 30px;
+}
+
+margin-left: 30 px;
+.alert {
+
+margin-top: 10px;
+}
+
+#footer {
+
+border-top: 1px solid #dddddd;
+
+padding-top: 10px;
+}
+/* Groups Selector */
+#group-selector {
+margin: 10px 0;
+}
+#group-selector select {
+margin: 0;
+width: 85%;
+background-color: #ffffff;
+border: 1px solid #cccccc;
+height: 30px;
+line-height: 30px;
+color: #555555;
+}
+
+textarea,
+select,
+input {
+max-width: 300px;
+}
+
+/* Journal Table Styles */
+td.day-box,
+th.day-header {
+padding: 4px !important;
+vertical-align: middle !important;
+text-align: center;
+}
+
+#ajax-progress-indicator {
+display: none;
+}

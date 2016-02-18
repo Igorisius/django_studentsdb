@@ -1,4 +1,4 @@
-Django==1.7.1
+Django==1.7.7
 MySQL-python
 Pillow
 django-crispy-forms==1.4.0

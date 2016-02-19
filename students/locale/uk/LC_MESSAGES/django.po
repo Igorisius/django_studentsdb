@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 21:27+0000\n"
+"POT-Creation-Date: 2016-02-19 13:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: models/students.py:11
+msgid "Student"
+msgstr "Студенти"
+
+#: models/students.py:12 templates/students/base.html:48
+#: templates/students/students_list.html:6
+msgid "Students"
+msgstr "Студенти"
+
+#: models/students.py:17
+msgid "First_name"
+msgstr "Ім'я"
+
+#: models/students.py:22
+msgid "Last_name"
+msgstr "Прізвище"
+
+#: models/students.py:27
+msgid "Middle_name"
+msgstr "По-батькові"
+
+#: models/students.py:32
+msgid "Birthday"
+msgstr "Дата народження"
+
+#: models/students.py:37 templates/students/students_list.html:29
+msgid "Photo"
+msgstr "Фото"
+
+#: models/students.py:43
+msgid "Ticket"
+msgstr "№ Квитка"
+
+#: models/students.py:47
+msgid "Notes"
+msgstr "нотатки"
+
+#: models/students.py:50
+msgid "Group"
+msgstr "Група"
 
 #: templates/students/base.html:8 templates/students/base.html.py:30
 #: templates/students/base.html:78
@@ -31,10 +72,6 @@ msgstr "Група"
 #: templates/students/base.html:35
 msgid "All Students"
 msgstr "Усі студенти"
-
-#: templates/students/base.html:48 templates/students/students_list.html:6
-msgid "Students"
-msgstr "Студенти"
 
 #: templates/students/base.html:49 templates/students/students_list.html:78
 msgid "Journal"
@@ -78,10 +115,6 @@ msgstr "Список Студентів"
 msgid "Add Student"
 msgstr "Додати Студента"
 
-#: templates/students/students_list.html:29
-msgid "Photo"
-msgstr "Фото"
-
 #: templates/students/students_list.html:30
 msgid "Last Name"
 msgstr "Прізвище"
@@ -109,3 +142,75 @@ msgstr "Редагувати"
 #: templates/students/students_list.html:80
 msgid "Delete"
 msgstr "Видалити"
+
+#: views/students.py:71
+msgid "First Name field is required"
+msgstr "Ім'я є обов'язковим"
+
+#: views/students.py:77
+msgid "Last Name field is required"
+msgstr "Прізвище є обов'язковим"
+
+#: views/students.py:83
+msgid "Birthday field is required"
+msgstr "Дата народження є обов'язковою"
+
+#: views/students.py:88
+msgid "Please, add correct data (ex. 1991-02-21)"
+msgstr "Будь ласка, введіть коректний формат дати (напр. 1991-02-21)"
+
+#: views/students.py:94
+msgid "Ticket number is required"
+msgstr "Номер квитка є обов'язковим"
+
+#: views/students.py:100
+msgid "Choose student group"
+msgstr "Виберіть групу студентів"
+
+#: views/students.py:104
+msgid "Please, choose correct group"
+msgstr "Будь ласка, виберіть коректну групу"
+
+#: views/students.py:110
+msgid "Please, upload photo"
+msgstr "Будь ласка, завантажте фото"
+
+#: views/students.py:114
+msgid "Please, upload .png or .jpeg file"
+msgstr "Будь ласка, завантажте файл з розширенням .png або .jpeg"
+
+#: views/students.py:116
+msgid "Max photo size - 3 Mb"
+msgstr "Максимальний розмір фото - 3 Мб"
+
+#: views/students.py:125
+msgid "Student created successfully!"
+msgstr "Студента успішно створено"
+
+#: views/students.py:129
+msgid "Please correct the following errors"
+msgstr "Будь ласка, виправте наступні помилки"
+
+#: views/students.py:136
+msgid "Adding the Student canceled"
+msgstr "Додавання студента скасовано"
+
+#: views/students.py:165
+msgid "Save"
+msgstr "Зберегти"
+
+#: views/students.py:166
+msgid "Cancel"
+msgstr "Відмінити"
+
+#: views/students.py:180
+msgid "Student updated successfully!"
+msgstr "Студента успішно відредаговано"
+
+#: views/students.py:184
+msgid "Student updated canceled!"
+msgstr "Редагування студента відмінено"
+
+#: views/students.py:200
+msgid "Student delete successfully!"
+msgstr "Студента успішно видалено"

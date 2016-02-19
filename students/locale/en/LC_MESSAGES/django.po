@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 21:27+0000\n"
+"POT-Creation-Date: 2016-02-19 13:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,47 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: models/students.py:11
+msgid "Student"
+msgstr ""
+
+#: models/students.py:12 templates/students/base.html:48
+#: templates/students/students_list.html:6
+msgid "Students"
+msgstr ""
+
+#: models/students.py:17
+msgid "First_name"
+msgstr ""
+
+#: models/students.py:22
+msgid "Last_name"
+msgstr ""
+
+#: models/students.py:27
+msgid "Middle_name"
+msgstr ""
+
+#: models/students.py:32
+msgid "Birthday"
+msgstr ""
+
+#: models/students.py:37 templates/students/students_list.html:29
+msgid "Photo"
+msgstr ""
+
+#: models/students.py:43
+msgid "Ticket"
+msgstr ""
+
+#: models/students.py:47
+msgid "Notes"
+msgstr ""
+
+#: models/students.py:50
+msgid "Group"
+msgstr ""
 
 #: templates/students/base.html:8 templates/students/base.html.py:30
 #: templates/students/base.html:78
@@ -28,10 +69,6 @@ msgstr ""
 
 #: templates/students/base.html:35
 msgid "All Students"
-msgstr ""
-
-#: templates/students/base.html:48 templates/students/students_list.html:6
-msgid "Students"
 msgstr ""
 
 #: templates/students/base.html:49 templates/students/students_list.html:78
@@ -76,10 +113,6 @@ msgstr ""
 msgid "Add Student"
 msgstr ""
 
-#: templates/students/students_list.html:29
-msgid "Photo"
-msgstr ""
-
 #: templates/students/students_list.html:30
 msgid "Last Name"
 msgstr ""
@@ -106,4 +139,76 @@ msgstr ""
 
 #: templates/students/students_list.html:80
 msgid "Delete"
+msgstr ""
+
+#: views/students.py:71
+msgid "First Name field is required"
+msgstr ""
+
+#: views/students.py:77
+msgid "Last Name field is required"
+msgstr ""
+
+#: views/students.py:83
+msgid "Birthday field is required"
+msgstr ""
+
+#: views/students.py:88
+msgid "Please, add correct data (ex. 1991-02-21)"
+msgstr ""
+
+#: views/students.py:94
+msgid "Ticket number is required"
+msgstr ""
+
+#: views/students.py:100
+msgid "Choose student group"
+msgstr ""
+
+#: views/students.py:104
+msgid "Please, choose correct group"
+msgstr ""
+
+#: views/students.py:110
+msgid "Please, upload photo"
+msgstr ""
+
+#: views/students.py:114
+msgid "Please, upload .png or .jpeg file"
+msgstr ""
+
+#: views/students.py:116
+msgid "Max photo size - 3 Mb"
+msgstr ""
+
+#: views/students.py:125
+msgid "Student created successfully!"
+msgstr ""
+
+#: views/students.py:129
+msgid "Please correct the following errors"
+msgstr ""
+
+#: views/students.py:136
+msgid "Adding the Student canceled"
+msgstr ""
+
+#: views/students.py:165
+msgid "Save"
+msgstr ""
+
+#: views/students.py:166
+msgid "Cancel"
+msgstr ""
+
+#: views/students.py:180
+msgid "Student updated successfully!"
+msgstr ""
+
+#: views/students.py:184
+msgid "Student updated canceled!"
+msgstr ""
+
+#: views/students.py:200
+msgid "Student delete successfully!"
 msgstr ""

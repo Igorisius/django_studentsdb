@@ -60,8 +60,8 @@ class GroupCreateForm(ModelForm):
         # set form field properties
         self.helper.help_text_inline = True
         self.helper.html5_required = True
-        self.helper.label_class = 'col-sm-6 control-label'
-        self.helper.field_class = 'col-sm-6'
+        self.helper.label_class = 'col-sm-2 control-label'
+        self.helper.field_class = 'col-sm-10'
         self.helperrender_unmentioned_fields = True
     #    self.helper.add_input(Submit('submit', u'Зберегти', css_class='btn btn-success'))
     #    self.helper.add_input(Submit('cancel_button', u'Скасувати', css_class='btn btn-danger'))

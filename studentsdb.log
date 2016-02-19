@@ -20,3 +20,6 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/smtplib.py", line 333, in send
     raise SMTPServerDisconnected('please run connect() first')
 SMTPServerDisconnected: please run connect() first
+INFO 2016-02-19 12:07:01,401 signals: Student added: Олег Сало (ID: 15)
+INFO 2016-02-19 12:08:42,283 signals: Student updated: Олег Савків (ID: 10)
+INFO 2016-02-19 13:42:31,382 signals: Student updated: Семен Горох (ID: 14)

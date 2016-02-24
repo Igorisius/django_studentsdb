@@ -1,5 +1,6 @@
 {% extends "students/base.html" %}
 
+{% load i18n %}
 {% load static from staticfiles %}
 
 {% block meta_title %}Облік відвідування{% endblock meta_title %}
@@ -36,7 +37,7 @@
   	  <th class="name"> Студент</th>
   	  {% for day in month_header %}
   	  <th class="day-header">
-  	  	{{ day.verbose }}
+  	  	{% trans day.verbose %}
   	  	</br>
   	  	{{ day.day }}
   	  </th>

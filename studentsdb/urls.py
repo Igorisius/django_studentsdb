@@ -5,6 +5,10 @@ from students.views.groups import GroupDeleteView, GroupUpdateView, GroupCreateV
 from students.views.exams import ExamDeleteView, ExamUpdateView, ExamCreateView
 from students.views.journal import JournalView
 
+js_info_dict = {
+    'packages': ('students',),
+}
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'studentsdb.views.home', name='home'),
@@ -49,6 +53,8 @@ urlpatterns = patterns('',
         name='exams_delete'),
    # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
+    # url for javascript translation
+    url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
 
 
     url(r'^admin/', include(admin.site.urls)),

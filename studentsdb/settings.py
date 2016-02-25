@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from .db import DATABASES
+from .db import DATABASES, SOCIAL_AUTH_FACEBOOK_SECRET
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -23,6 +23,8 @@ from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = \
     global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
+    "social.apps.django_app.context_processors.backends",
+    "social.apps.django_app.context_processors.login_redirect",
     "studentsdb.context_processors.students_proc",
     "students.context_processors.groups_processor",
     )
@@ -52,6 +54,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'crispy_forms',
     'registration',
+    'social.apps.django_app.default',
     'students',
     'studentsdb',
 )
@@ -160,3 +163,10 @@ LOGGING = {
         }
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+'social.backends.facebook.FacebookOAuth2',
+'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1267619993255398'

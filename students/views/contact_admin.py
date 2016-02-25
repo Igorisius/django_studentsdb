@@ -6,6 +6,7 @@ from django import forms
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import permission_required
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -31,10 +32,11 @@ class ContactForm(forms.Form):
         self.helper.help_text_inline = True
         self.helper.html5_required = True
         self.helper.label_class = 'col-sm-2 control-label'
-        self.helper.field_class = 'col-sm-10'
+        self.helper.field_class = 'col-sm-6'
 
         # form buttons
-        self.helper.add_input(Submit('send_button', u'Надіслати'))
+        self.helper.add_input(Submit('send_button', (u'Надіслати'), css_class='btn btn-success'))
+        
 
     from_email = forms.EmailField(
         label=u"Ваша Емейл Адреса")
@@ -47,7 +49,7 @@ class ContactForm(forms.Form):
         label=u"Текст повідомлення",
         widget=forms.Textarea)
 
-
+@permission_required('auth.add_user')
 def contact_admin(request):
 	# check if form was posted
     if request.method == 'POST':

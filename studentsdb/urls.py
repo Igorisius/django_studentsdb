@@ -2,11 +2,13 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView, TemplateView
+from django.contrib.auth.decorators import login_required
 
 from students.views.students import StudentUpdateView, StudentDeleteView
-from students.views.groups import GroupDeleteView, GroupUpdateView, GroupCreateView
-from students.views.exams import ExamDeleteView, ExamUpdateView, ExamCreateView
+from students.views.groups import GroupDeleteView, GroupUpdateView, GroupCreateView, groups_list
+from students.views.exams import ExamDeleteView, ExamUpdateView, ExamCreateView, exams_list
 from students.views.journal import JournalView
+
 
 js_info_dict = {
     'packages': ('students',),
@@ -21,38 +23,38 @@ urlpatterns = patterns('',
     url(r'^students/add/$', 'students.views.students.students_add',
         name='students_add'),
     url(r'^students/(?P<pk>\d+)/edit/$',
-        StudentUpdateView.as_view(),
+        login_required(StudentUpdateView.as_view()),
         name='students_edit'),
     url(r'^students/(?P<pk>\d+)/delete/$',
-        StudentDeleteView.as_view(),
+        login_required(StudentDeleteView.as_view()),
         name='students_delete'),
 
 
     # My Groups urls
-    url(r'^groups/$', 'students.views.groups.groups_list', name='groups'),
-    url(r'^groups/add/$', GroupCreateView.as_view(),
+    url(r'^groups/$', login_required(groups_list), name='groups'),
+    url(r'^groups/add/$', login_required(GroupCreateView.as_view()),
         name='groups_add'),
     url(r'^groups/(?P<pk>\d+)/edit/$',
-        GroupUpdateView.as_view(),
+        login_required(GroupUpdateView.as_view()),
         name='groups_edit'),
     url(r'^groups/(?P<pk>\d+)/delete/$',
-        GroupDeleteView.as_view(),
+        login_required(GroupDeleteView.as_view()),
         name='groups_delete'),
 
     # My Journal urls
-    url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
+    url(r'^journal/(?P<pk>\d+)?/?$', login_required(JournalView.as_view()), name='journal'),
   #  url(r'^journal/(?P<sid>\d+)/update/$',    'students.views.journal.journal_update',
  #       name='journal_update'),
 
   # My Exam urls
-    url(r'^exams/$', 'students.views.exams.exams_list', name='exams'),
-    url(r'^exams/add/$', ExamCreateView.as_view(),
+    url(r'^exams/$', login_required(exams_list), name='exams'),
+    url(r'^exams/add/$', login_required(ExamCreateView.as_view()),
         name='exams_add'),
     url(r'^exams/(?P<pk>\d+)/edit/$',
-        ExamUpdateView.as_view(),
+        login_required(ExamUpdateView.as_view()),
         name='exams_edit'),
     url(r'^exams/(?P<pk>\d+)/delete/$',
-        ExamDeleteView.as_view(),
+        login_required(ExamDeleteView.as_view()),
         name='exams_delete'),
    # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),

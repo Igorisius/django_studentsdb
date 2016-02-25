@@ -9,6 +9,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms import ModelForm
 from django.views.generic import UpdateView, DeleteView
 from django.contrib import messages
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout
@@ -55,6 +57,7 @@ def students_list(request):
     return render(request, 'students/students_list.html',
         context)
 
+@login_required
 def students_add(request):
 
     if request.method == "POST":
@@ -171,6 +174,7 @@ class StudentUpdateForm(ModelForm):
 
 
 # class for update student
+
 class StudentUpdateView(UpdateView):
     model = Student
     template_name = 'students/students_edit.html'
@@ -184,6 +188,10 @@ class StudentUpdateView(UpdateView):
             return HttpResponseRedirect(u'%s?status_message=%s' % (reverse('home'), _(u"Student updated canceled!")))
         else:
             return super(StudentUpdateView, self).post(request, *args, **kwargs)
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentUpdateView, self).dispatch(*args, **kwargs)
         
         
 
@@ -198,5 +206,9 @@ class StudentDeleteView(DeleteView):
 
     def get_success_url(self):
         return u'%s?status_message%s' % (reverse('home'), _(u"Student delete successfully!"))
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)
 #def students_delete(request, sid):
 #    return HttpResponse('<h1>Delete Student %s</h1>' % sid)

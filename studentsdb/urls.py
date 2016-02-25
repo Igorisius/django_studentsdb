@@ -1,5 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.views.generic.base import RedirectView, TemplateView
+
 from students.views.students import StudentUpdateView, StudentDeleteView
 from students.views.groups import GroupDeleteView, GroupUpdateView, GroupCreateView
 from students.views.exams import ExamDeleteView, ExamUpdateView, ExamCreateView
@@ -55,6 +58,11 @@ urlpatterns = patterns('',
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
     # url for javascript translation
     url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
+
+    # User Related urls
+    url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'}, name='auth_logout'),
+    url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
+    url(r'^users/', include('registration.backends.simple.urls', namespace='users')),
 
 
     url(r'^admin/', include(admin.site.urls)),

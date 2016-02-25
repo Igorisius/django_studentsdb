@@ -14,6 +14,10 @@ from .db import DATABASES
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+TEMPLATE_DIRS = (
+os.path.join(BASE_DIR, 'studentsdb', 'templates'),
+)
+
 from django.conf import global_settings
 
 TEMPLATE_CONTEXT_PROCESSORS = \
@@ -35,6 +39,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REGISTRATION_OPEN = True
 
 # Application definition
 
@@ -46,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'registration',
     'students',
 )
 

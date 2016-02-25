@@ -38,6 +38,12 @@
       <td>{{ user.date_joined }}</td>
     </tr>
   {% endif %}
+  {% if user.stprofile.mobile_phone %}
+    <tr>
+      <td>{% trans "Mobile Phone" %}:</td>
+      <td>{{ user.stprofile.mobile_phone }}</td>
+    </tr>
+  {% endif %}
 </table>
 
 {% endblock content %}

@@ -62,6 +62,8 @@ urlpatterns = patterns('',
     url(r'^jsi18n\.js$', 'django.views.i18n.javascript_catalog', js_info_dict),
 
     # User Related urls
+    url(r'^users/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')),
+     name='profile'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'}, name='auth_logout'),
     url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'), name='registration_complete'),
     url(r'^users/', include('registration.backends.simple.urls', namespace='users')),

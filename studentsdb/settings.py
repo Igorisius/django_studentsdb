@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from .db import DATABASES, SOCIAL_AUTH_FACEBOOK_SECRET
+from .db import DATABASES
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -33,6 +33,8 @@ TEMPLATE_CONTEXT_PROCESSORS = \
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '737s0%6epg_m5b4o%(!$ct692$2o&v=9bep4aqh1!en#6hc4-='
+
+SOCIAL_AUTH_FACEBOOK_SECRET = '5bc25ad5e42ac9ff449571a067775bb5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,6 +62,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'studentsdb.middleware.RequestTimeMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',

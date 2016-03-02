@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load static from staticfiles %}
+{% load pagenav %}
 
 {% block meta_title %}{% trans "Students" %}{% endblock meta_title %}
 
@@ -91,10 +92,11 @@
 <!-- {% with object_list=students %}
   {% include "students/pagination.html" %}
 {% endwith %} -->
+{% pagenav students is_paginated paginator %}
 
-{% with object_list=students %}
+<!--{% with object_list=students %}
   {% include "students/pagination.html" %}
-{% endwith %}
+{% endwith %} -->
 <!--End Students Listing -->
 {% endblock content %}
 

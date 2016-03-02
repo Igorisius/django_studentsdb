@@ -22,15 +22,12 @@
 
 <thead>
     <tr>
-        <th><a href="{% url 'home' %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">No
-            {% if order_by == 'id' and reverse != '1' %}&uarr;
-            {% elif order_by == 'id' and reverse == '1' %}&darr;
-            {% endif %}
-    </th>
+        <th>No</th>
         <th>{% trans "Photo" %}</th>
        <th><a href="{% url 'home' %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">{% trans "Last Name" %}
             {% if order_by == 'last_name' and reverse != '1' %}&uarr;
             {% elif order_by == 'last_name' and reverse == '1' %}&darr;
+            
             {% endif %}
     </th>
         <th><a href="{% url 'home' %}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}">{% trans "First Name" %}
@@ -92,7 +89,7 @@
 <!-- {% with object_list=students %}
   {% include "students/pagination.html" %}
 {% endwith %} -->
-{% pagenav students is_paginated paginator %}
+{% pagenav object_list=students is_paginated=is_paginated paginator=paginator %}
 
 <!--{% with object_list=students %}
   {% include "students/pagination.html" %}
